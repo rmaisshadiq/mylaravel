@@ -35,7 +35,7 @@ Route::get('/profile', function () {
 
 Route::get('mahasiswa/ti/latifa', function () {
     echo "<p style='font-size:40;color:orange'>Jurusan Teknologi Informasi";
-    echo "<h1> Selamat Datang Latifa...</h1>";
+    echo "<h1> Selamat Datang Dimas...</h1>";
     echo "<hr>";
     echo "<p> lorem .........................</p>";
 });
