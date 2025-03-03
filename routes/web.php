@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 //default routing
@@ -8,6 +9,21 @@ Route::get('/', function () {
 });
 
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+
+
+Route::get('/listmahasiswa', function(){
+    $arrmhs=[
+        'Nabil',
+        'Achmad',
+        'Khoir',
+        'Hanifa'
+    ];
+    return view('akademik.mahasiswa', ['mhs' => $arrmhs]);
+});
+
+
+Route::view('/hello', 'hello', ['nama'=>'Nabil Achmad Khoir']);
+
 
 Route::post('submit', function () {
     return 'form submitted!!';
