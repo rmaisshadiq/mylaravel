@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
+use illuminate\Support\Facades\DB;
 
 class MahasiswaController extends Controller
 {
@@ -12,6 +14,16 @@ class MahasiswaController extends Controller
     public function index()
     {
         //
+        DB::listen( function ($query) {
+            logger("Query: " . $query->sql." |binding " .implode(", ", $query->bindings));
+        });
+
+        //mengambil  semua data mahasiswa
+        $data = Mahasiswa::all();
+        dd($data);
+
+        // dump($data);
+        // return view('mahasiswa.index', compact("data"));
     }
 
     /**

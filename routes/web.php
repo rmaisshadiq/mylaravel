@@ -1,12 +1,13 @@
 <?php
 
-
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 //default routing
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 
 Route::post('submit', function () {
     return 'form submitted!!';
@@ -35,7 +36,7 @@ Route::get('/profile', function () {
 
 Route::get('mahasiswa/ti/latifa', function () {
     echo "<p style='font-size:40;color:orange'>Jurusan Teknologi Informasi";
-    echo "<h1> Selamat Datang Dimas...</h1>";
+    echo "<h1> Selamat Datang Nabil...</h1>";
     echo "<hr>";
     echo "<p> lorem .........................</p>";
 });
