@@ -20,10 +20,10 @@ class MahasiswaController extends Controller
 
         //mengambil  semua data mahasiswa
         $data = Mahasiswa::all();
-        dd($data);
+        // dd($data);
 
-        // dump($data);
-        // return view('mahasiswa.index', compact("data"));
+        dump($data);
+        return view('mahasiswa.index', compact("data"));
     }
 
     /**
