@@ -67,21 +67,21 @@
 
                 <tr>
                     <td>1</td>
-                    <td><?= $mhs1 ?></td>
+                    <td>{{ $mhs1 }}</td>
                     <td>123456789</td>
                     <td>Teknik Informatika</td>
                 </tr>
 
                 <tr>
                     <td>1</td>
-                    <td><?= $mhs2 ?></td>
+                    <td>{{ $mhs2 }}</td>
                     <td>123456789</td>
                     <td>Teknik Informatika</td>
                 </tr>
 
                 <tr>
                     <td>1</td>
-                    <td><?= $mhs3 ?></td>
+                    <td>{{ $mhs3 }}</td>
                     <td>123456789</td>
                     <td>Teknik Informatika</td>
                 </tr>
