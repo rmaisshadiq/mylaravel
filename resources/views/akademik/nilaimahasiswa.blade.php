@@ -89,10 +89,18 @@
   <div class="container">
     <h1>Nilai Mahasiswa</h1>
     <div class="col-md-6">
-      @if ()
-
+      @if (($total_nilai>=0) and ($total_nilai<56))
+        <div class="alert alert-danger">
+          Anda Tidak Lulus
+        </div>
+      @elseif(($total_nilai>=56) and ($total_nilai<=100))
+        <div class="alert alert-success">
+          Anda Lulus
+        </div>
       @else
-
+        <div class="alert alert-info">
+          Nilai Tidak Valid
+        </div>
       @endif
     </div>
     <table>
