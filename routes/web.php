@@ -138,10 +138,19 @@ route::get("nilaimahasiswaswitch", function(){
 });
 
 // forloop
-route::get("nilaimahasiswafor", function(){
+route::get("nilaimahasiswaforloop", function(){
     $nama = "Nabil";
     $nim = "2311082032";
     $total_nilai = 10;
 
     return view('akademik.nilaimahasiswaforloop', compact('nama', 'nim', 'total_nilai'));
+});
+
+// while loop
+route::get("nilaimahasiswawhile", function(){
+    $nama = "Nabil";
+    $nim = "2311082032";
+    $total_nilai = 2;
+
+    return view('akademik.nilaimahasiswawhileloop', compact('nama', 'nim', 'total_nilai'));
 });
