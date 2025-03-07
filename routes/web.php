@@ -118,3 +118,11 @@ route::get("mahasiswalist", function(){
 
     return view('akademik.mahasiswalist', compact('mhs1', 'mhs2', 'mhs3'));
 });
+
+route::get("nilaimahasiswa", function(){
+    $nama = "Nabil";
+    $nim = "2311082032";
+    $total_nilai = 90;
+
+    return view('akademik.nilaimahasiswa', compact('nama', 'nim', 'total_nilai'));
+});
