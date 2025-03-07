@@ -89,9 +89,10 @@
   <div class="container">
     <h1>Nilai Mahasiswa</h1>
     <div class="col-md-6">
-      @for ($i = 0; $i < $total_nilai; $i++)
-          looping ke - {{ $i }} <br>
-      @endfor
+      <h4>Nama: {{ $nama }}, Nim: {{ $nim }}</h4>
+      Nilai = @foreach ($total_nilai as $nilai)
+      <div class="alert alert-info d-inline-block"> {{ $nilai }}</div>
+    @endforeach
     </div>
     <table>
       <thead>
@@ -103,13 +104,15 @@
         </tr>
       </thead>
       <tbody>
+        @foreach ($total_nilai as $nilai)
+      <tr>
+        <td>1</td>
+        <td>{{ $nama }}</td>
+        <td>{{ $nim }}</td>
+        <td>{{ $nilai }}</td>
+      </tr>
+    @endforeach
 
-        <tr>
-          <td>1</td>
-          <td>{{ $nama }}</td>
-          <td>{{ $nim }}</td>
-          <td>{{ $total_nilai }}</td>
-        </tr>
 
       </tbody>
     </table>

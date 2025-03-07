@@ -154,3 +154,12 @@ route::get("nilaimahasiswawhile", function(){
 
     return view('akademik.nilaimahasiswawhileloop', compact('nama', 'nim', 'total_nilai'));
 });
+
+// foreach loop
+route::get("nilaimahasiswafore", function(){
+    $nama = "Nabil";
+    $nim = "2311082032";
+    $total_nilai = [20, 30, 40, 50];
+
+    return view('akademik.nilaimahasiswaforeach', compact('nama', 'nim', 'total_nilai'));
+});
