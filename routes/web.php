@@ -126,3 +126,88 @@ Route::get("nilaimahasiswa", function() {
         "total_nilai"
     ));
 });
+
+Route::get("nilaimahasiswaswitch", function() {
+    $nama = "doom";
+    $nim = "486501492";
+    $total_nilai = "0";
+
+    return view("akademik.nilaimahasiswaswitch",compact(
+        "nama",
+        "nim",
+        "total_nilai"
+    ));
+});
+
+Route::get("nilaimahasiswaforloop", function() {
+    $nama = "doom";
+    $nim = "486501492";
+    $total_nilai = "0";
+
+    return view("akademik.nilaimahasiswaforloop",compact(
+        "nama",
+        "nim",
+        "total_nilai"
+    ));
+});
+
+Route::get("nilaimahasiswawhile", function() {
+    $nama = "doom";
+    $nim = "486501492";
+    $total_nilai = "5";
+
+    return view("akademik.nilaimahasiswawhile",compact(
+        "nama",
+        "nim",
+        "total_nilai"
+    ));
+});
+
+Route::get("nilaimahasiswaforeach", function() {
+    $nama = "doom";
+    $nim = "486501492";
+    $total_nilai = ["20", "30", "69"];
+
+    return view("akademik.nilaimahasiswaforeach",compact(
+        "nama",
+        "nim",
+        "total_nilai"
+    ));
+});
+
+Route::get("nilaimahasiswaforelse", function() {
+    $nama = "doom";
+    $nim = "486501492";
+    $total_nilai = [20, 20, 30, 50, 60, 90, 100];
+
+    return view("akademik.nilaimahasiswaforelse",compact(
+        "nama",
+        "nim",
+        "total_nilai"
+    ));
+});
+
+Route::get("nilaimahasiswacontinue", function() {
+    $nama = "doom";
+    $nim = "486501492";
+    $total_nilai = [20, 20, 30, 50, 60, 90, 100];
+
+    return view("akademik.nilaimahasiswacontinue",compact(
+        "nama",
+        "nim",
+        "total_nilai"
+    ));
+});
+
+Route::get("nilaimahasiswabreak", function() {
+    $nama = "doom";
+    $nim = "486501492";
+    $total_nilai = [100, 80, 20, 20, 30, 50, 60, 90, 100];
+
+    return view("akademik.nilaimahasiswabreak",compact(
+        "nama",
+        "nim",
+        "total_nilai"
+    ));
+});
+

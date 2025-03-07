@@ -89,22 +89,9 @@
     <div class="container">
         <h1>Nilai Mahasiswa</h1>
         <div class="col-md-6">
-            @switch($total_nilai)
-                @case(($total_nilai>0) and ($total_nilai<40))
-                    <div class="alert alert-danger">Sangat jelek</div>
-                    @break
-                
-                @case(($total_nilai>=40) and ($total_nilai<70))
-                    <div class="alert alert-info">Memuaskan</div>
-                    @break
-                
-                @case(($total_nilai>=70) and ($total_nilai<=100))
-                    <div class="alert alert-danger">Sangat Memuaskan</div>
-                    @break
-                
-                @default
-                    
-            @endswitch
+            @for ($i = 0; $i < 10; $i++)
+                looping ke - {{ $i }} <br>
+            @endfor
         </div>
         <table>
             <thead>

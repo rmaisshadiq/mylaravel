@@ -89,22 +89,20 @@
     <div class="container">
         <h1>Nilai Mahasiswa</h1>
         <div class="col-md-6">
-            @switch($total_nilai)
-                @case(($total_nilai>0) and ($total_nilai<40))
-                    <div class="alert alert-danger">Sangat jelek</div>
-                    @break
-                
-                @case(($total_nilai>=40) and ($total_nilai<70))
-                    <div class="alert alert-info">Memuaskan</div>
-                    @break
-                
-                @case(($total_nilai>=70) and ($total_nilai<=100))
-                    <div class="alert alert-danger">Sangat Memuaskan</div>
-                    @break
-                
-                @default
-                    
-            @endswitch
+            <h4>Nama: {{ $nama }}, NIM: {{ $nim }}</h4>
+            Nilai = @forelse ($total_nilai as $nilai)
+                @if (($nilai > 0) and ($nilai < 56))
+                    <div class="alert alert-danger d-inline-block">{{ $nilai }}</div>
+                @elseif (($nilai > 55) and ($nilai <= 70))
+                    <div class="alert alert-info d-inline-block">{{ $nilai }}</div>
+                @elseif (($nilai >= 70) and ($nilai <= 100))
+                    <div class="alert alert-success d-inline-block">{{ $nilai }}</div>
+                @else
+                    <div class="alert alert-danger d-inline-block">Nilai tidak valid</div>
+                @endif
+            @empty
+                <div class="alert alert-danger d-inline-block">Tidak ada nilai</div>
+            @endforelse
         </div>
         <table>
             <thead>
@@ -116,13 +114,14 @@
                 </tr>
             </thead>
             <tbody>
-
-                <tr>
-                    <td>1</td>
-                    <td>{{ $nama }}</td>
-                    <td>{{ $nim }}</td>
-                    <td>{{ $total_nilai }}</td>
-                </tr>
+                @foreach ($total_nilai as $nilai)    
+                    <tr>
+                        <td>1</td>
+                        <td>{{ $nama }}</td>
+                        <td>{{ $nim }}</td>
+                        <td>{{ $nilai }}</td>
+                    </tr>
+                @endforeach
 
             </tbody>
         </table>

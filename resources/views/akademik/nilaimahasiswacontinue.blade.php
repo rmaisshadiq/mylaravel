@@ -89,22 +89,13 @@
     <div class="container">
         <h1>Nilai Mahasiswa</h1>
         <div class="col-md-6">
-            @switch($total_nilai)
-                @case(($total_nilai>0) and ($total_nilai<40))
-                    <div class="alert alert-danger">Sangat jelek</div>
-                    @break
-                
-                @case(($total_nilai>=40) and ($total_nilai<70))
-                    <div class="alert alert-info">Memuaskan</div>
-                    @break
-                
-                @case(($total_nilai>=70) and ($total_nilai<=100))
-                    <div class="alert alert-danger">Sangat Memuaskan</div>
-                    @break
-                
-                @default
-                    
-            @endswitch
+            <h4>Nama: {{ $nama }}, NIM: {{ $nim }}</h4>
+            Nilai = @foreach ($total_nilai as $nilai)
+                @if ($nilai<45)
+                    @continue
+                @endif
+                <div class="alert alert-danger d-inline-block">{{ $nilai }}</div>
+            @endforeach
         </div>
         <table>
             <thead>
@@ -116,13 +107,14 @@
                 </tr>
             </thead>
             <tbody>
-
+                @foreach ($total_nilai as $nilai)    
                 <tr>
                     <td>1</td>
                     <td>{{ $nama }}</td>
                     <td>{{ $nim }}</td>
-                    <td>{{ $total_nilai }}</td>
+                    <td>{{ $nilai }}</td>
                 </tr>
+                @endforeach
 
             </tbody>
         </table>
