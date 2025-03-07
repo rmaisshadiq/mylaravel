@@ -111,10 +111,10 @@ Route::fallback(function () {
     return "<h2> Mohon maaf, halaman yang anda cari <b>tidak ditemukan</b>";
 });
 
-route::get("listmahasiswa", function(){
+route::get("mahasiswalist", function(){
     $mhs1 = "Abdhu";
     $mhs2 = "Wayaw";
     $mhs3 = "Cibaduyut";
 
-    return view('akademik.mahasiswa', compact('mhs1', 'mhs2', 'mhs3'));
+    return view('akademik.mahasiswalist', compact('mhs1', 'mhs2', 'mhs3'));
 });
