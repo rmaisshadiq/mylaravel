@@ -163,3 +163,33 @@ route::get("nilaimahasiswafore", function(){
 
     return view('akademik.nilaimahasiswaforeach', compact('nama', 'nim', 'total_nilai'));
 });
+
+// forelse loop
+route::get("nilaimahasiswaforel", function(){
+    $nama = "Nabil";
+    $nim = "2311082032";
+    $total_nilai = [50, 70, 80, 100];
+
+    return view('akademik.nilaimahasiswaforelse', compact('nama', 'nim', 'total_nilai'));
+});
+
+//continue
+Route::get("nilaimahasiswacon", function(){
+    $nama = "Nabil";
+    $nim = "2311082032";
+    $total_nilai = [20,30,50,80];
+    
+
+    return view("akademik.nilaimahasiswacontinue", compact ("nama","nim","total_nilai"));
+
+});
+//break
+Route::get("nilaimahasiswabreak", function(){
+    $nama = "Nabil";
+    $nim = "2311082032";
+    $total_nilai = [100,80,20,30,50,80];
+    
+
+    return view("akademik.nilaimahasiswabreak", compact ("nama","nim","total_nilai"));
+
+});
