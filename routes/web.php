@@ -119,10 +119,29 @@ route::get("mahasiswalist", function(){
     return view('akademik.mahasiswalist', compact('mhs1', 'mhs2', 'mhs3'));
 });
 
+// if conditional
 route::get("nilaimahasiswa", function(){
     $nama = "Nabil";
     $nim = "2311082032";
     $total_nilai = 90;
 
     return view('akademik.nilaimahasiswa', compact('nama', 'nim', 'total_nilai'));
+});
+
+// switch conditional
+route::get("nilaimahasiswaswitch", function(){
+    $nama = "Nabil";
+    $nim = "2311082032";
+    $total_nilai = 100;
+
+    return view('akademik.nilaimahasiswaswitch', compact('nama', 'nim', 'total_nilai'));
+});
+
+// forloop
+route::get("nilaimahasiswafor", function(){
+    $nama = "Nabil";
+    $nim = "2311082032";
+    $total_nilai = 10;
+
+    return view('akademik.nilaimahasiswaforloop', compact('nama', 'nim', 'total_nilai'));
 });
