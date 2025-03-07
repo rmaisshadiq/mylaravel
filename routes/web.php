@@ -110,3 +110,11 @@ Route::prefix('login')->group(function () {
 Route::fallback(function () {
     return "<h2> Mohon maaf, halaman yang anda cari <b>tidak ditemukan</b>";
 });
+
+route::get("listmahasiswa", function(){
+    $mhs1 = "Abdhu";
+    $mhs2 = "Wayaw";
+    $mhs3 = "Cibaduyut";
+
+    return view('akademik.mahasiswa', compact('mhs1', 'mhs2', 'mhs3'));
+});
