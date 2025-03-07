@@ -95,7 +95,7 @@
         </div>
       @elseif(($total_nilai>=56) and ($total_nilai<=100))
         <div class="alert alert-success">
-          Anda Lulus
+          Selamat, Anda Lulus
         </div>
       @else
         <div class="alert alert-info">
