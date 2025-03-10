@@ -1,5 +1,6 @@
 @extends('layouts.main')
-@section('title', 'Daftar Prodi')
+@section('title')
+    Daftar Prodi
 @endsection
 @section('content')
     <h1>Daftar Prodi Jurusan Teknologi Informasi</h1>
