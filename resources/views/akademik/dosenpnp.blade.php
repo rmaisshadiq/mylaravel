@@ -7,6 +7,10 @@
     <ol>
         @foreach ($dsn as $namaDsn)
             <li>{{ $namaDsn }}</li>
+            @empty
+            <div class="alert alert-warning d-inline-block">
+                Data Dosen tidak ada. Silahkan input data terlebih dahulu.
+            </div>
         @endforeach
     </ol>
 @endsection
