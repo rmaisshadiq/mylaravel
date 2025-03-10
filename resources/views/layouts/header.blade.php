@@ -20,7 +20,7 @@
                             <a class="nav-link" href="/dosen">Dosen</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/prodi">Prodi</a>
+                            <a class="nav-link" href="/proditi">Prodi</a>
                         </li>
                     </ul>
                 </div>

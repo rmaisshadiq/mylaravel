@@ -208,6 +208,6 @@ Route::get('/dosenti', function () {
 
 // prodi
 Route::get('/proditi', function () {
-    $arrdsn = ['Teknologi Rekayasa Perangkat Lunak', 'Sistem Informasi', 'Teknik Komputer', 'Animasi', 'Manajemen Informatika'];
-    return view('akademik.prodipnp', ['dsn' => $arrdsn]);
+    $arrprd = ['Teknologi Rekayasa Perangkat Lunak', 'Sistem Informasi', 'Teknik Komputer', 'Animasi', 'Manajemen Informatika'];
+    return view('akademik.prodipnp', ['dsn' => $arrprd]);
 });
