@@ -195,19 +195,19 @@ Route::get("nilaimahasiswabreak", function(){
 });
 
 // Mahasiswa
-Route::get('/mahasiswati', function () {
+Route::get('/pnp/jurusan/ti/mahasiswa', function () {
     $arrmhs = ['Nabil', 'Abdhu', 'Rafi', 'DanTDM'];
     return view('akademik.mahasiswapnp', ['mhs' => $arrmhs]);
-});
+})->name('mahasiswa');
 
 // Dosen
-Route::get('/dosenti', function () {
+Route::get('/pnp/jurusan/ti/dosen', function () {
     $arrdsn = ['Dosen framework', 'Dosen mobile Programming', 'dosen IOT', 'dosen web programming'];
     return view('akademik.dosenpnp', ['dsn' => $arrdsn]);
-});
+})->name('dosen');
 
 // prodi
-Route::get('/proditi', function () {
-    $arrprd = ['Teknologi Rekayasa Perangkat Lunak', 'Sistem Informasi', 'Teknik Komputer', 'Animasi', 'Manajemen Informatika'];
-    return view('akademik.prodipnp', ['dsn' => $arrprd]);
-});
+Route::get('/pnp/{jurusan}/{prodi}', function ($jurusan,$prodi) {
+    $data = [$jurusan,$prodi];
+    return view('akademik.prodipnp')->with('data',$data);
+})-> name('prodi');

@@ -2,7 +2,7 @@
 @section('title')
     Daftar Prodi
 @section('content')
-    <h1>Daftar Prodi Jurusan Teknologi Informasi</h1>
+    <h1>Daftar Jurusan : {{ $data[0] }} Prodi : {{ $data[1] }}</h1>
         <div class="row">
             <div class="col-lg-4 py-3">
                 <div class="card" style="width: 18rem;">
