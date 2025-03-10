@@ -193,3 +193,21 @@ Route::get("nilaimahasiswabreak", function(){
     return view("akademik.nilaimahasiswabreak", compact ("nama","nim","total_nilai"));
 
 });
+
+// Mahasiswa
+Route::get('/mahasiswati', function () {
+    $arrmhs = ['Nabil', 'Abdhu', 'Rafi', 'DanTDM'];
+    return view('akademik.mahasiswapnp', ['mhs' => $arrmhs]);
+});
+
+// Dosen
+Route::get('/dosenti', function () {
+    $arrdsn = ['Dosen framework', 'Dosen mobile Programming', 'dosen IOT', 'dosen web programming'];
+    return view('akademik.dosenpnp', ['dsn' => $arrdsn]);
+});
+
+// prodi
+Route::get('/proditi', function () {
+    $arrdsn = ['Teknologi Rekayasa Perangkat Lunak', 'Sistem Informasi', 'Teknik Komputer', 'Animasi', 'Manajemen Informatika'];
+    return view('akademik.prodipnp', ['dsn' => $arrdsn]);
+});
