@@ -7,6 +7,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/mahasiswa', action: [MahasiswaController::class,'index']);
 
 Route::get('/listmahasiswa', function() {
@@ -210,4 +212,24 @@ Route::get("nilaimahasiswabreak", function() {
         "total_nilai"
     ));
 });
+
+// mahasiswa TI
+Route::get('/pnp/jurusan/ti/mahasiswa', function () {
+    $arrMhs = ['naufal', 'reykel', 'atika', 'dika', 'doom', 'bringer'];
+    return view('akademik.mahasiswapnp', ['mhs' => $arrMhs]);
+})->name('mahasiswa');
+
+// dosen TI
+Route::get('/pnp/jurusan/ti/dosen', function () {
+    $arrDsn = ['dosen web framework', 'dosen microservices', 'dosen mobile programming', 'dosen multimedia', 'dosen IoT'];
+    return view('akademik.dosenpnp', ['dsn' => $arrDsn]);
+})->name('dosen');
+
+// prodi
+Route::get('/pnp/{jurusan}/{prodi}', function ($jurusan, $prodi) {
+    $data = [$jurusan, $prodi];
+    return view('akademik.prodipnp')->with('data', $data);
+})->name('prodi');
+
+
 
