@@ -11,8 +11,8 @@
             padding: 60px 15px 0;
         }
     </style>
-    {{--
-    <link href="/css/bootstrap.min.css" rel="stylesheet"> --}}
+    
+    {{--<link href="/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link rel="stylesheet" href='/css/bootstrap.min.css'>
 </head>
 
