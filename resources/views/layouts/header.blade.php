@@ -14,11 +14,11 @@
                             <a class="nav-link" href="/home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/mahasiswa">Mahasiswa</a>
+                            <a class="nav-link" href="/mahasiswati">Mahasiswa</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/dosen">Dosen</a>
-                            </l>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/prodi">Prodi</a>
                         </li>
