@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\dosen\DosenController;
+use App\Http\Controllers\TeknisiController;
+
 //default routing
 Route::get('/', function () {
     return view('welcome');
@@ -9,7 +12,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/mahasiswa', action: [MahasiswaController::class,'index']);
+Route::get('/mahasiswa', [MahasiswaController::class,'index']);
 
 Route::get('/listmahasiswa', function() {
     $arrMhs = [
@@ -232,4 +235,11 @@ Route::get('/pnp/{jurusan}/{prodi}', function ($jurusan, $prodi) {
 })->name('prodi');
 
 
-
+Route::get('dosen', [DosenController::class, 'index']);
+Route::get('teknisi/create', [TeknisiController::class, 'create']);
+Route::get('teknisi', [TeknisiController::class, 'index']);
+Route::get('teknisi/{id}', [TeknisiController::class, 'show']);
+Route::get('teknisi/{id}/edit', [TeknisiController::class, 'edit']);
+Route::put('teknisi/{id}', [TeknisiController::class, 'update']);
+Route::delete('teknisi/{id}', [TeknisiController::class, 'destroy']);
+Route::post('teknisi', [TeknisiController::class, 'store']);

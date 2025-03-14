@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title')
-Daftar Mahasiswa
+    Daftar Mahasiswa
 @endsection
 @section('content')
     <h1>Daftar Mahasiswa Jurusan TI</h1>
