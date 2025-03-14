@@ -3,6 +3,9 @@
 
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\dosen\DosenController;
+use App\Http\Controllers\TeknisiController;
+
 //default routing
 Route::get('/', function () {
     return view('welcome');
@@ -211,3 +214,11 @@ Route::get('/pnp/{jurusan}/{prodi}', function ($jurusan,$prodi) {
     $data = [$jurusan,$prodi];
     return view('akademik.prodipnp')->with('data',$data);
 })-> name('prodi');
+
+Route::get('teknisi', [TeknisiController::class, 'index']);
+Route::get('teknisi/create', [TeknisiController::class, 'create']);
+Route::post('teknisi', [TeknisiController::class, 'store']);
+Route::get('teknisi/{id}', [TeknisiController::class, 'show']);
+Route::get('teknisi/{id}/edit', [TeknisiController::class, 'edit']);
+Route::put('teknisi/{id}', [TeknisiController::class, 'update']);
+Route::delete('teknisi/{id}', [TeknisiController::class, 'destroy']);

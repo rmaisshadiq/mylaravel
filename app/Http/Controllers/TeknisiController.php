@@ -36,6 +36,7 @@ class TeknisiController extends Controller
     public function show(string $id)
     {
         //
+        return "Menampilkan user dengan id". $id;
     }
 
     /**
@@ -52,6 +53,7 @@ class TeknisiController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        return "Menampilkan user dengan id " . $id;
     }
 
     /**
