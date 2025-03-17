@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('mahasiswas', function (Blueprint $table) {
             //
-            $table->string('prodi');
+            $table->dropColumn('tgllahir');
         });
     }
 
@@ -24,7 +24,7 @@ return new class extends Migration
     {
         Schema::table('mahasiswas', function (Blueprint $table) {
             //
-            $table->dropColumn('prodi')->after('jurusan');
+            $table->date('tgllahir');
         });
     }
 };

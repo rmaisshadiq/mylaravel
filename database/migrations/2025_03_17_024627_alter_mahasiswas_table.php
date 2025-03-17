@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::table('mahasiswas', function (Blueprint $table) {
             //
-            $table->string('prodi');
+            $table->renameColumn('nim', 'nobp');
+            $table->date('tgllahir')->after('prodi');
+            $table->dropColumn('alamat');
         });
     }
 
@@ -24,7 +26,9 @@ return new class extends Migration
     {
         Schema::table('mahasiswas', function (Blueprint $table) {
             //
-            $table->dropColumn('prodi')->after('jurusan');
+            $table->renameColumn('nobp', 'nim');
+            $table->dropColumn('tgllahir')->after('prodi');
+            $table->string('alamat')->after('jurusan');
         });
     }
 };
