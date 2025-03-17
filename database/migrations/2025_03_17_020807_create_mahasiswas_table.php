@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('nim')->unique();
+            $table->string('jurusan')->nullable();
             $table->string('email')->unique();
-            $table->string('jurusan');
-            $table->string('no_hp')->nullable();
+            $table->string('nohp')->nullable();
+            $table->string('prodi');
             $table->string('alamat')->nullable();
-            $table->string('tgllahir');
+            $table->date('tgllahir');
             $table->timestamps();
         });
     }
