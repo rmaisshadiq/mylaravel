@@ -234,3 +234,9 @@ Route::get('select-view', [MahasiswaController::class, 'selectView']);
 Route::get('select-where', [MahasiswaController::class, 'selectWhere']);
 Route::get('statement', [MahasiswaController::class, 'statement']);
 
+Route::get('dosen', [DosenpnpController::class,'index'])->name('dosens.index');
+Route::get('dosen/create', [DosenpnpController::class,'create'])->name('dosens.create');
+Route::post('dosen', [DosenpnpController::class,'store'])->name('dosens.store');
+Route::get('dosen/{id}/edit', [DosenpnpController::class,'edit'])->name('dosens.edit');
+Route::put('dosen/{id}', [DosenpnpController::class,'update'])->name('dosens.update');
+Route::delete('dosen/{id}', [DosenpnpController::class,'destroy'])->name('dosens.destroy');
