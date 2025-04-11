@@ -77,22 +77,22 @@ class DosenpnpController extends Controller
     {
         $request->validate([
             'nama' => 'required|string|max:255',
-            'nik' => 'required|string|max:255',
+            'nip' => 'required|string|max:255',
             'email' => 'required|string|email|unique:dosens,email,' . $id,
             'nohp' => 'nullable|string|max:15',
             'alamat' => 'nullable|string|max:255',
-            'keahlian' => 'required|string|max:255',
+            'bidang' => 'required|string|max:255',
         ]);
 
         DB::table('dosens')
             ->where('id', $id)
             ->update([
                 'nama' => $request->nama,
-                'nik' => $request->nik,
+                'nip' => $request->nip,
                 'email' => $request->email,
                 'nohp' => $request->nohp,
                 'alamat' => $request->alamat,
-                'keahlian' => $request->keahlian,
+                'bidang' => $request->keahlian,
                 'updated_at' => now()
             ]);
 

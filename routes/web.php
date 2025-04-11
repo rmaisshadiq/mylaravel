@@ -5,6 +5,7 @@ use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dosen\DosenController;
 use App\Http\Controllers\dosen\DosenpnpController;
+use App\Http\Controllers\MahasiswapnpController;
 use App\Http\Controllers\TeknisiController;
 
 //default routing
@@ -241,3 +242,10 @@ Route::post('dosen', [DosenpnpController::class,'store'])->name('dosens.store');
 Route::get('dosen/{id}/edit', [DosenpnpController::class,'edit'])->name('dosens.edit');
 Route::put('dosen/{id}', [DosenpnpController::class,'update'])->name('dosens.update');
 Route::delete('dosen/{id}', [DosenpnpController::class,'destroy'])->name('dosens.destroy');
+
+Route::get('mahasiswa', [MahasiswapnpController::class,'index'])->name('mahasiswa.index');
+Route::get('mahasiswa/create', [MahasiswapnpController::class,'create'])->name('mahasiswa.create');
+Route::post('mahasiswa', [MahasiswapnpController::class,'store'])->name('mahasiswa.store');
+Route::get('mahasiswa/{id}/edit', [MahasiswapnpController::class,'edit'])->name('mahasiswa.edit');
+Route::put('mahasiswa/{id}', [MahasiswapnpController::class,'update'])->name('mahasiswa.update');
+Route::delete('mahasiswa/{id}', [MahasiswapnpController::class,'destroy'])->name('mahasiswa.destroy');
