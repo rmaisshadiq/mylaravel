@@ -4,6 +4,7 @@
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dosen\DosenController;
+use App\Http\Controllers\dosen\DosenpnpController;
 use App\Http\Controllers\TeknisiController;
 
 //default routing
