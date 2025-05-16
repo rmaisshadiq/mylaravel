@@ -72,4 +72,14 @@ class PenggunaController extends Controller
         $pengguna->update($data);
         return redirect()->route('penggunas.index')->with('success', 'Data pengguna berhasil diupdate');
     }
+
+    public function destroy($id)
+   {
+       $pengguna = Pengguna::findOrFail($id);
+       $pengguna->delete();
+
+
+       return redirect()->route('penggunas.index')->with('success', 'Pengguna berhasil dihapus.');
+   }
+
 }
