@@ -3,18 +3,19 @@
 namespace App\Http\Controllers\dosen;
 
 use App\Http\Controllers\Controller;
+use App\Models\Dosenti;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
 
-class DosenpnpController extends Controller
+class DosentiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $dosens = DB::table('dosens')->get();
-        return view('dosens.index', compact('dosens'));
+        $dosens = Dosenti::latest()->paginate(5);
+        return view('dosensti/index', compact('dosens'));
     }
 
     /**
@@ -22,7 +23,7 @@ class DosenpnpController extends Controller
      */
     public function create()
     {
-        return view('dosens.create');
+        return view('dosensti.create');
     }
 
     /**
@@ -36,21 +37,11 @@ class DosenpnpController extends Controller
             'email' => 'required|string|email|unique:dosens,email',
             'nohp' => 'nullable|string|max:15',
             'alamat' => 'nullable|string|max:255',
-            'keahlian' => 'required|string|max:255',
+            'bidang' => 'required|string|max:255',
         ]);
 
-        DB::table('dosens')->insert([
-            'nama' => $request->nama,
-            'nik' => $request->nik,
-            'email' => $request->email,
-            'nohp' => $request->nohp,
-            'alamat' => $request->alamat,
-            'keahlian' => $request->keahlian,
-            'created_at' => now(),
-            'updated_at' => now(), // diperbaiki dari 'update_at'
-        ]);
-
-        return redirect()->route('dosens.index')->with('success', 'Data Dosen berhasil ditambahkan');
+        Dosenti::create($request->all());
+        return redirect()->route('dosensti.index')->with('success', 'Data Dosen berhasil ditambahkan');
     }
 
     /**
@@ -66,8 +57,8 @@ class DosenpnpController extends Controller
      */
     public function edit(string $id)
     {
-        $dosen = DB::table('dosens')->where('id', $id)->first();
-        return view('dosens.edit', compact('dosen'));
+        $dosen = Dosenti::findOrFail($id);
+        return view('dosensti.edit', compact('dosen'));
     }
 
     /**
@@ -84,19 +75,9 @@ class DosenpnpController extends Controller
             'bidang' => 'required|string|max:255',
         ]);
 
-        DB::table('dosens')
-            ->where('id', $id)
-            ->update([
-                'nama' => $request->nama,
-                'nik' => $request->nik,
-                'email' => $request->email,
-                'nohp' => $request->nohp,
-                'alamat' => $request->alamat,
-                'bidang' => $request->keahlian,
-                'updated_at' => now()
-            ]);
-
-        return redirect()->route('dosens.index')->with('success', 'Data Dosen berhasil diperbarui');
+        $dosen = Dosenti::findOrFail($id);
+        $dosen->update($request->all());
+        return redirect()->route('dosensti.index')->with('success', 'Data Dosen berhasil diperbarui');
     }
 
     /**
@@ -104,7 +85,8 @@ class DosenpnpController extends Controller
      */
     public function destroy(string $id)
     {
-        DB::table('dosens')->where('id', $id)->delete();
-        return redirect()->route('dosens.index')->with('success', 'Data Dosen berhasil dihapus');
+        $dosen = Dosenti::findOrFail($id);
+        $dosen->delete();
+        return redirect()->route('dosensti.index')->with('success', 'Data Dosen berhasil dihapus');
     }
 }

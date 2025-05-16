@@ -14,10 +14,13 @@
                             <a class="nav-link" href="/home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('mahasiswa')}}">Mahasiswa</a>
+                            <a class="nav-link" href="{{route('mahasiswas.index')}}">Mahasiswa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('dosen')}}">Dosen</a>
+                            <a class="nav-link" href="{{route('dosens.index')}}">Dosen PNP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('dosensti.index')}}">Dosen TI</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('prodi', ['jurusan'=>'Teknologi-Informasi','Prodi'])}}">Prodi</a>

@@ -28,7 +28,7 @@
                                         <th>No HP</th>
                                         <th>Jurusan</th>
                                         <th>Program Studi</th>
-                                        <th>Tanggal Lahir</th>
+                                        <th>Alamat</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -37,12 +37,12 @@
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $mahasiswa->nama }}</td>
-                                            <td>{{ $mahasiswa->nobp }}</td>
+                                            <td>{{ $mahasiswa->nim }}</td>
                                             <td>{{ $mahasiswa->email }}</td>
                                             <td>{{ $mahasiswa->nohp }}</td>
                                             <td>{{ $mahasiswa->jurusan }}</td>
                                             <td>{{ $mahasiswa->prodi }}</td>
-                                            <td>{{ $mahasiswa->tgllahir }}</td>
+                                            <td>{{ $mahasiswa->alamat }}</td>
                                             <td>
                                                 <div class="d-flex">
                                                     <a href="{{ route('mahasiswas.edit', $mahasiswa->id) }}"

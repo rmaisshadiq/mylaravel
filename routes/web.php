@@ -7,13 +7,15 @@ use App\Http\Controllers\dosen\DosenController;
 use App\Http\Controllers\dosen\DosenpnpController;
 use App\Http\Controllers\MahasiswapnpController;
 use App\Http\Controllers\TeknisiController;
+use App\Http\Controllers\dosen\DosentiController;
+use App\Http\Controllers\PenggunaController;
 
 //default routing
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+
 
 
 Route::get('/listmahasiswa', function(){
@@ -63,10 +65,6 @@ Route::get('mahasiswa/ti/latifa', function () {
 });
 
 
-//route with parameter
-Route::get('mahasiswa/{nama}', function ($nama) {
-    return '<p> Nama mahasiswa RPL : <b>' . $nama . '</b></p>';
-});
 
 
 Route::get('hitungusia/{nama}/{tahunlahir}', function ($nama, $tahun_lahir) {
@@ -75,10 +73,6 @@ Route::get('hitungusia/{nama}/{tahunlahir}', function ($nama, $tahun_lahir) {
 });
 
 
-//route with optional parameter
-Route::get('mahasiswa/{nama?}', function ($nama = 'tidak ada') {
-    return '<p> Nama mahasiswa RPL : <b>' . $nama . '</b></p>';
-});
 
 
 Route::get('hitungusia/{nama?}/{tahunlahir?}', function ($nama = "tidak ada", $tahun_lahir = "2025") {
@@ -243,9 +237,46 @@ Route::get('dosen/{id}/edit', [DosenpnpController::class,'edit'])->name('dosens.
 Route::put('dosen/{id}', [DosenpnpController::class,'update'])->name('dosens.update');
 Route::delete('dosen/{id}', [DosenpnpController::class,'destroy'])->name('dosens.destroy');
 
-Route::get('mahasiswa', [MahasiswapnpController::class,'index'])->name('mahasiswa.index');
-Route::get('mahasiswa/create', [MahasiswapnpController::class,'create'])->name('mahasiswa.create');
-Route::post('mahasiswa', [MahasiswapnpController::class,'store'])->name('mahasiswa.store');
-Route::get('mahasiswa/{id}/edit', [MahasiswapnpController::class,'edit'])->name('mahasiswa.edit');
-Route::put('mahasiswa/{id}', [MahasiswapnpController::class,'update'])->name('mahasiswa.update');
-Route::delete('mahasiswa/{id}', [MahasiswapnpController::class,'destroy'])->name('mahasiswa.destroy');
+Route::get('dosenti', [DosentiController::class,'index'])->name('dosensti.index');
+Route::get('dosenti/create', [DosentiController::class,'create'])->name('dosensti.create');
+Route::post('dosenti', [DosentiController::class,'store'])->name('dosensti.store');
+Route::get('dosenti/{id}/edit', [DosentiController::class,'edit'])->name('dosensti.edit');
+Route::put('dosenti/{id}', [DosentiController::class,'update'])->name('dosensti.update');
+Route::delete('dosenti/{id}', [DosentiController::class,'destroy'])->name('dosensti.destroy');
+ 
+Route::get('mahasiswa', [MahasiswapnpController::class,'index'])->name('mahasiswas.index');
+Route::get('mahasiswa/create', [MahasiswapnpController::class,'create'])->name('mahasiswas.create');
+Route::post('mahasiswa', [MahasiswapnpController::class,'store'])->name('mahasiswas.store');
+Route::get('mahasiswa/{id}/edit', [MahasiswapnpController::class,'edit'])->name('mahasiswas.edit');
+Route::put('mahasiswa/{id}', [MahasiswapnpController::class,'update'])->name('mahasiswas.update');
+Route::delete('mahasiswa/{id}', [MahasiswapnpController::class,'destroy'])->name('mahasiswas.destroy');
+
+Route::get('cek-objek',[DosenController::class,'cekObjek']);
+Route::get('insert',[DosenController::class,'insert']);
+Route::get('mass-assignment',[DosenController::class,'massAssignment']);
+Route::get('updatedosen',[DosenController::class,'update']);
+Route::get('updatedosen-where',[DosenController::class,'updateWhere']);
+Route::get('mass-update',[DosenController::class,'massUpdate']);
+Route::get('deletedosen',[DosenController::class,'delete']);
+Route::get('destroydosen',[DosenController::class,'destroy']);
+Route::get('mass-delete',[DosenController::class,'massDelete']);
+Route::get('all',[DosenController::class,'all']);
+Route::get('all-view',[DosenController::class,'allView']);
+Route::get('get-where',[DosenController::class,'getWhere']);
+Route::get('test-where',[DosenController::class,'testWhere']);
+Route::get('first',[DosenController::class,'first']);
+Route::get('find',[DosenController::class,'find']);
+Route::get('latest',[DosenController::class,'latest']);
+Route::get('limit',[DosenController::class,'limit']);
+Route::get('skip-take',[DosenController::class,'skipTake']);
+Route::get('soft-delete',[DosenController::class,'softDelete']);
+Route::get('with-trashed',[DosenController::class,'withTrashed']);
+Route::get('restore',[DosenController::class,'restore']);
+Route::get('force-delete',[DosenController::class,'forceDelete']);
+
+Route::get('pengguna/create', [PenggunaController::class, 'create'])->name('penggunas.create');
+Route::post('pengguna', [PenggunaController::class, 'store'])->name('penggunas.store');
+Route::get('pengguna', [PenggunaController::class, 'index'])->name('penggunas.index');
+Route::get('pengguna/{id}/edit', [PenggunaController::class, 'edit'])->name('penggunas.edit');
+Route::put('pengguna/{id}', [PenggunaController::class, 'update'])->name('penggunas.update');
+Route::delete('pengguna/{id}', [PenggunaController::class, 'destroy'])->name('penggunas.destroy');

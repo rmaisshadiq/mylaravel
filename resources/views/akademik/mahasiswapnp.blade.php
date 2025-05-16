@@ -1,4 +1,3 @@
-Update File mahasiswapnp.blade.php
 
 @extends('layouts.main')
 @section('title')
@@ -26,4 +25,7 @@ Update File mahasiswapnp.blade.php
                 </tr>
             @endforeach
     </table>
+    <div class="pagination-container d-flex justify-content-center mt-4">
+        {{ $mhs->links('pagination::bootstrap-5') }}
+    </div>
 @endsection

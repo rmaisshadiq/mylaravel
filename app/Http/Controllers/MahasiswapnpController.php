@@ -34,21 +34,21 @@ class MahasiswapnpController extends Controller
         //
         $request->validate([
             'nama' => 'required|string|max:255',
-            'nobp' => 'required|string|max:10',
+            'nim' => 'required|string|max:10',
             'email' => 'required|email|unique:mahasiswas',
             'nohp' => 'nullable|string|max:12',
             'jurusan' => 'required|string|max:255',
             'prodi' => 'required|string|max:255',
-            'tgllahir' => 'nullable|date'
+            'alamat' => 'required|string|max:255'
         ]);
         DB::table('mahasiswas')->insert([
             'nama' => $request->nama,
-            'nobp' => $request->nobp,
+            'nim' => $request->nim,
             'email' => $request->email,
             'nohp' => $request->nohp,
             'jurusan' => $request->jurusan,
             'prodi' => $request->prodi,
-            'tgllahir' => $request->tgllahir,
+            'alamat' => $request->alamat,
             'created_at' => now(),
             'updated_at' => now()
 
@@ -82,23 +82,23 @@ class MahasiswapnpController extends Controller
         //
         $request->validate([
             'nama' => 'required|string|max:255',
-            'nobp' => 'required|string|max:10',
+            'nim' => 'required|string|max:10',
             'email' => 'required|email|unique:mahasiswas,email,' . $id,
             'nohp' => 'nullable|string|max:12',
             'jurusan' => 'required|string|max:255',
             'prodi' => 'required|string|max:255',
-            'tgllahir' => 'nullable|date'
+            'alamat' => 'required|string|max:255'
         ]);
         DB::table('mahasiswas')
             ->where('id', $id)
             ->update([
                 'nama' => $request->nama,
-                'nobp' => $request->nobp,
+                'nim' => $request->nim,
                 'email' => $request->email,
                 'nohp' => $request->nohp,
                 'jurusan' => $request->jurusan,
                 'prodi' => $request->prodi,
-                'tgllahir' => $request->tgllahir,
+                'alamat' => $request->alamat,
                 'created_at' => now(),
                 'updated_at' => now()
 
